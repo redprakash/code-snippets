@@ -4,11 +4,12 @@ import { useState } from 'react';
 
 function App() {
   const [bgStyle, setbgStyle] = useState({
+    //these are the default value or Intital state of the div where I am changing color i.e App
     backgroundColor: 'wheat',
     color: 'black',
   });
   const [btnText, setBtnText] = useState('Change To Dark');
-  const [modeText, setModeText] = useState('Dark');
+  const [modeText, setModeText] = useState('Light');
   const changeMode = () => {
     if (bgStyle.color === 'black') {
       setbgStyle({
@@ -16,19 +17,19 @@ function App() {
         color: 'wheat',
       });
       setBtnText('Change to Light');
-      setModeText('LIGHT');
+      setModeText('DARK');
     } else {
       setbgStyle({
         backgroundColor: 'wheat',
         color: 'black',
       });
       setBtnText('Change To Dark');
-      setModeText('DARK');
+      setModeText('LIGHT');
     }
   };
   return (
     <div className={styles.App} style={bgStyle}>
-      <h1>Hello Lets create {modeText} Mode</h1>
+      <h1>Hello you are in {modeText} Mode</h1>
       <button onClick={changeMode} className={styles.Button}>
         {btnText}
       </button>
